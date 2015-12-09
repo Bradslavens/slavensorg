@@ -1,0 +1,1 @@
+[05-Aug-2015 23:57:38 UTC] PHP Fatal error:  Call to undefined function password_verify() in /home/bradslavens2/public_html/slavensrealty.org/application/controllers/admin.php on line 101
