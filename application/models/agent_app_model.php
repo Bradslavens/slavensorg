@@ -7,13 +7,13 @@ class Agent_app_model extends CI_Model{
 
 	public function get_all()
 	{
-		$query = $this->db->get('contact');
+		$query = $this->db->get('contacts');
 		return $query->result_array();
 	}
 
 	public function add_agent()
 	{
-		$datez="";
+		$datez=date("Y/m/d");
 		$this->load->helper('url');
 		$data = array(
 			'source' =>$this->input->post('source'),
@@ -22,18 +22,18 @@ class Agent_app_model extends CI_Model{
 			'phone' => $this->input->post('phone'),
 			'email' => $this->input->post('blue'),
 			'license_status_id' => $this->input->post('license_status'),
-			'license_number' => $this->input->post('license_number'),
+			'bre_license_number' => $this->input->post('license_number'),
 			'mail_list' =>$this->input->post('mail_list'),
-			'date'=> $datez
+			'add_date'=> $datez
 			);
 
-		$this->db->insert('contact',$data);
+		$this->db->insert('contacts',$data);
 		return $this->db->insert_id();
 	}
 
 	public function get_by_id($id)
 	{
-		$sql="SELECT `first_name`, `last_name`, `email`, `phone`, `license_number` FROM contact WHERE `id`=?";
+		$sql="SELECT `first_name`, `last_name`, `email`, `phone`, `bre_license_number` FROM contacts WHERE `id`=?";
 		return $this->db->query($sql, array($id));
 	}
 

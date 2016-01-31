@@ -124,6 +124,7 @@
 
 		   <!-- craigslist.. need to update -->
 		   <input type="hidden" name="source" class="form-control" value="<?php echo $source; ?>">
+		   <input type= "hidden" name="type" value = "3">
 
 		   <br />
 		   <br />

@@ -87,7 +87,7 @@ class Admin extends CI_Controller {
 			$this->load->helper('form');
 	    	$this->load->library('form_validation');
 
-	    	$this->form_validation->set_rules('user_name', 'User Name', 'required|minlength[2]|max_lenght[12]|alpha_numeric');
+	    	$this->form_validation->set_rules('user_name', 'User Name', 'required|minlength[2]');
 	    	$this->form_validation->set_rules('password', 'Password', 'required|minlength[2]|max_lenght[12]');
 
 	    	if ($this->form_validation->run() === FALSE)
@@ -107,8 +107,9 @@ class Admin extends CI_Controller {
 		        	// get contacts
 					
 					$data['contacts'] = $this->admin_model->get_contacts();
-
+		        	$this->load->view('templates/bootstrap_top');
 					$this->load->view('admin/contacts', $data);
+		        	$this->load->view('templates/bootstrap_bottom');
 
 				} 
 				else 

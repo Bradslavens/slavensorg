@@ -70,7 +70,7 @@ class Welcome extends CI_Controller {
 			    $data['last_name']= $row->last_name;
 			    $data['email']= $row->email;
 			    $data['phone']= $row->phone;
-			    $data['license_number']= $row->license_number;
+			    $data['license_number']= $row->bre_license_number;
 			 } 
 
 			// // send response email
@@ -84,9 +84,8 @@ class Welcome extends CI_Controller {
 			 $message=$this->load->view('templates/email_1.php',$data,TRUE);
 			 $this->email->subject('Slavens Realty Information Request');
 			 $this->email->message($message); 
-
-			 $this->email->send();
-
+			 // $this->email->send();
+			 echo $message;
 			 //echo $this->email->print_debugger();
 
 
